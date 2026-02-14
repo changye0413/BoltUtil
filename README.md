@@ -1,32 +1,32 @@
-# YourPay —— 下一代去中心化 USDT 支付协议
+# BoltUtil —— 下一代去中心化 USDT 支付协议
 
 [![Website](https://img.shields.io/badge/Official-Website-blue)](https://boltutil.com)
 [![Status](https://img.shields.io/badge/Service-Online-brightgreen)](https://boltutil.com)
 [![License](https://img.shields.io/badge/Access-No_KYC-orange)](https://boltutil.com)
 
-**YourPay** 是一款专为现代开发者与跨境商户设计的非托管加密货币收款协议。它不是一个资金中转站，而是一个**智能链上哨兵**。我们帮助您的系统秒级识别 USDT 入账，并实现完全自动化的业务对账。
+**BoltUtil** 是一款专为现代开发者与跨境商户设计的非托管加密货币收款协议。它不是一个资金中转站，而是一个**智能链上哨兵**。我们帮助您的系统秒级识别 USDT 入账，并实现完全自动化的业务对账。
 
 ---
 
-## 💡 什么是 YourPay？
+## 💡 什么是 BoltUtil？
 
-传统的支付网关通常充当“资金托管人”，而 YourPay 回归了区块链的本质。我们通过高性能节点实时监听区块链网络，确保资金流动透明、安全、直接。
+传统的支付网关通常充当“资金托管人”，而 BoltUtil 回归了区块链的本质。我们通过高性能节点实时监听区块链网络，确保资金流动透明、安全、直接。
 
 ### 核心工作逻辑：无感、直接、纯粹
-1. **直达钱包**：资金不经过 YourPay，直接进入您的非托管钱包 (MetaMask, Trust Wallet 等)。
+1. **直达钱包**：资金不经过 BoltUtil，直接进入您的非托管钱包 (MetaMask, Trust Wallet 等)。
 2. **智能监控**：亚秒级扫描目标地址，捕获每一笔链上波动。
 3. **自动触发**：通过高性能 Webhook 和邮件系统，立即通知后端完成发货。
 
 ---
 
-## 🚀 为什么选择 YourPay？
+## 🚀 为什么选择 BoltUtil？
 
 ### 1. 真正的资金所有权 (P2P)
-* **Not your keys, not your coins.** 资金永不进入 YourPay 账户。
+* **Not your keys, not your coins.** 资金永不进入 BoltUtil 账户。
 * 彻底规避资金冻结、二次清算延迟或平台风险。
 
 ### 2. 零手续费，透明计费
-* **不抽佣**：不按交易比例收费， YourPay 仅作为纯粹的生产力工具。
+* **不抽佣**：不按交易比例收费， BoltUtil 仅作为纯粹的生产力工具。
 * **灵活方案**：从支持基础监听的免费版到高性能的 Pro 版，按需选择。
 
 ### 3. 极简集成，无需 KYC
@@ -50,11 +50,11 @@
 
 ## 🌐 立即开始
 
-YourPay 不仅仅是一个收款工具，它是您进入 Web3 支付世界的最后一块拼图。
+BoltUtil 不仅仅是一个收款工具，它是您进入 Web3 支付世界的最后一块拼图。
 
 - **官方网站**: [boltutil.com](https://boltutil.com)
 - **开发文档**: [查看 API 文档](https://boltutil.com/developer-docs)
 - **联系我们**: 通过官网在线客服获取支持
 
 ---
-© 2026 YourPay Protocol. Security First. Privacy Driven.
+© 2026 BoltUtil Protocol. Security First. Privacy Driven.
