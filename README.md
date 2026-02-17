@@ -28,19 +28,19 @@
 
 #### 1. 现代化首页 (Home)
 > 极简设计，5 分钟开启您的全球收款之旅。
-![首页预览](https://raw.githubusercontent.com/您的用户名/您的仓库名/main/assets/home.jpg)
+![首页预览](https://raw.githubusercontent.com/changye0413/BoltUtil/main/assets/index.png)
 
 #### 2. 强大的商户控制台 (Merchant Console)
 > 实时监控订单状态、管理结算钱包与 API 密钥。
-![控制台预览](https://raw.githubusercontent.com/您的用户名/您的仓库名/main/assets/console.jpg)
+![控制台预览](https://raw.githubusercontent.com/changye0413/BoltUtil/main/assets/dashboard.png)
 
 #### 3. 极简收银台页面 (Checkout UI)
 > 标准化收银页面，适配移动端，无需自行开发前端界面，直接调用。
-![收银台预览](https://raw.githubusercontent.com/您的用户名/您的仓库名/main/assets/checkout.jpg)
+![收银台预览](https://raw.githubusercontent.com/changye0413/BoltUtil/main/assets/checkout.jpg)
 
 #### 4. 开发者文档 (Developer Docs)
 > 标准 RESTful API，提供详细的快速集成指南。
-![文档预览](https://raw.githubusercontent.com/您的用户名/您的仓库名/main/assets/docs.jpg)
+![文档预览](https://raw.githubusercontent.com/changye0413/BoltUtil/main/assets/doc.png)
 
 ### 🌟 为什么选择 BoltUtil？
 * **0 手续费**: 我们不从您的交易中抽成，仅收取基础服务费或完全免费。
