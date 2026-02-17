@@ -1,60 +1,97 @@
-# BoltUtil —— 下一代去中心化 USDT 支付协议
+<div align="center">
+  <img src="assets/logo.png" width="120" alt="BoltUtil Logo" />
+  <h1>BoltUtil Protocol</h1>
+  <p><b>The Last Piece of the Web3 Payment Puzzle</b></p>
 
-[![Website](https://img.shields.io/badge/Official-Website-blue)](https://boltutil.com)
-[![Status](https://img.shields.io/badge/Service-Online-brightgreen)](https://boltutil.com)
-[![License](https://img.shields.io/badge/Access-No_KYC-orange)](https://boltutil.com)
+  <p>
+    <a href="#english">English</a> | 
+    <a href="#simplified-chinese">简体中文</a>
+  </p>
 
-**BoltUtil** 是一款专为现代开发者与跨境商户设计的非托管加密货币收款协议。它不是一个资金中转站，而是一个**智能链上哨兵**。我们帮助您的系统秒级识别 USDT 入账，并实现完全自动化的业务对账。
-
----
-
-## 💡 什么是 BoltUtil？
-
-传统的支付网关通常充当“资金托管人”，而 BoltUtil 回归了区块链的本质。我们通过高性能节点实时监听区块链网络，确保资金流动透明、安全、直接。
-
-### 核心工作逻辑：无感、直接、纯粹
-1. **直达钱包**：资金不经过 BoltUtil，直接进入您的非托管钱包 (MetaMask, Trust Wallet 等)。
-2. **智能监控**：亚秒级扫描目标地址，捕获每一笔链上波动。
-3. **自动触发**：通过高性能 Webhook 和邮件系统，立即通知后端完成发货。
+  [![Website](https://img.shields.io/badge/Official-Website-blue)](https://boltutil.com)
+  [![Status](https://img.shields.io/badge/Service-Online-brightgreen)](https://boltutil.com)
+  [![License](https://img.shields.io/badge/Access-No_KYC-orange)](https://boltutil.com)
+  [![Network](https://img.shields.io/badge/Network-TRC20%20%7C%20ERC20-7B61FF)](https://boltutil.com)
+</div>
 
 ---
 
-## 🚀 为什么选择 BoltUtil？
+<a name="english"></a>
+## 🇺🇸 English
 
-### 1. 真正的资金所有权 (P2P)
-* **Not your keys, not your coins.** 资金永不进入 BoltUtil 账户。
-* 彻底规避资金冻结、二次清算延迟或平台风险。
+### 🚀 What is BoltUtil?
+BoltUtil is a high-performance, **non-custodial** cryptocurrency payment gateway. We provide a "Smart Sentinel" service that monitors the blockchain in real-time, recognizing USDT transfers within seconds and notifying your system instantly via Webhooks.
 
-### 2. 零手续费，透明计费
-* **不抽佣**：不按交易比例收费， BoltUtil 仅作为纯粹的生产力工具。
-* **灵活方案**：从支持基础监听的免费版到高性能的 Pro 版，按需选择。
 
-### 3. 极简集成，无需 KYC
-* **隐私至上**：无需繁琐的身份审核，仅需邮箱和收款地址。
-* **快速上线**：最快可在 5 分钟内完成 API 集成。
 
-### 4. 工业级安全防护
-* **防假充值攻击**：自动识别并过滤同名代币或伪造合约转账。
-* **多节点冗余**：全球分布式集群，确保服务永不掉线。
-* **无需私钥**：仅需公开地址，永远不接触您的私钥或助记词。
+### 📸 Visual Interface
+> *Please capture these scenes from your live site.*
+
+* **Analytics Dashboard**: A bird's-eye view of your global revenue.
+    ![Dashboard](assets/dashboard-main.png)
+* **Checkout Widget**: The sleek, mobile-ready payment interface.
+    ![Checkout](assets/checkout-ui.png)
+* **Security Logs**: Real-time filtering of fake tokens and malicious transfers.
+    ![Security](assets/security-logs.png)
+
+### 🛠 Tech Stack & Integration
+* **Backend**: Distributed Node Cluster (High Availability)
+* **Speed**: < 1s Detection Latency
+* **Security**: SHA256 Webhook Signing
+
+**Quick Start in 3 Steps:**
+1.  **Bind**: Add your USDT (TRC20/ERC20) public address.
+2.  **Configure**: Set your Webhook URL in the Developer Console.
+3.  **Go Live**: Start receiving funds directly into your own wallet.
 
 ---
 
-## 🛠 技术特性
+<a name="simplified-chinese"></a>
+## 🇨🇳 简体中文
 
-- **多链支持**：USDT (TRC20 / ERC20 / Polygon) 及主流稳定币。
-- **全语言兼容**：标准 RESTful API，完美适配 Node.js, Python, PHP, Go 等后端。
-- **高并发支持**：支持大规模地址池并行监听，轻松应对抢购场景。
+### 🚀 什么是 BoltUtil？
+BoltUtil 是一款高性能、**非托管**的加密货币支付网关。我们提供“智能哨兵”服务，实时监控区块链，秒级识别 USDT 转账，并通过 Webhook 立即通知您的业务系统。
+
+
+
+### 📸 视觉演示
+> *请从您的官方网站截取以下页面放入 assets 文件夹。*
+
+* **数据看板**: 全局营收一目了然，支持多维度图表分析。
+    ![看板预览](assets/dashboard-main.png)
+* **收银台组件**: 适配移动端的极简支付界面，支持扫码与唤起钱包。
+    ![收银台预览](assets/checkout-ui.png)
+* **安全日志**: 自动拦截同名假币攻击，确保每一笔入账真实有效。
+    ![安全过滤](assets/security-logs.png)
+
+### 🛠 技术特性与集成
+* **后端架构**: 分布式节点集群（高可用性）
+* **识别速度**: 亚秒级监听延迟
+* **安全机制**: SHA256 签名算法验证 Webhook
+
+**只需 3 步即可上线:**
+1.  **绑定**: 添加您的 USDT (TRC20/ERC20) 公开收款地址。
+2.  **配置**: 在开发者控制台设置您的 Webhook 回调地址。
+3.  **收款**: 资金直接进入您的私人钱包，无需经过任何中转。
 
 ---
 
-## 🌐 立即开始
+## 📋 Recommended Screenshot Checklist (截图清单建议)
 
-BoltUtil 不仅仅是一个收款工具，它是您进入 Web3 支付世界的最后一块拼图。
+| Name (文件名) | Scene (建议画面) |
+| :--- | :--- |
+| `dashboard-main.png` | **Statistics**: Show the line charts and revenue cards. (展示折线图和收入卡片) |
+| `checkout-ui.png` | **Payment Page**: Combine Mobile & Desktop views. (将手机和电脑支付界面拼在一起) |
+| `security-logs.png` | **Verification**: Show a list of "Confirmed" transaction logs. (展示“已确认”的交易日志列表) |
+| `api-docs.png` | **Docs**: The Swagger or REST API documentation page. (API 文档或 Swagger 页面) |
+| `email-notif.png` | **Notification**: A screenshot of the email a merchant receives. (商户收到的通知邮件截图) |
 
-- **官方网站**: [boltutil.com](https://boltutil.com)
-- **开发文档**: [查看 API 文档](https://boltutil.com/developer-docs)
-- **联系我们**: 通过官网在线客服获取支持
+---
+
+## 🌐 Contact & Support
+- **Official Website**: [boltutil.com](https://boltutil.com)
+- **Documentation**: [docs.boltutil.com](https://boltutil.com/developer-docs)
+- **Email**: support@boltutil.com
 
 ---
 © 2026 BoltUtil Protocol. Security First. Privacy Driven.
