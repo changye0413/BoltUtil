@@ -4,7 +4,17 @@
 
   <p>
     <a href="#-简体中文">简体中文</a> | 
-    <a href="#-english">English</a>
+    <a href="#-english">English</a> | 
+    <a href="#-español">Español</a> | 
+    <a href="#-français">Français</a> | 
+    <a href="#-português">Português</a> | 
+    <a href="#-türkçe">Türkçe</a> | 
+    <a href="#-tiếng-việt">Tiếng Việt</a> | 
+    <a href="#-pусский">Русский</a> | 
+    <a href="#-بالعربية">العربية</a> | 
+    <a href="#-हिन्दी">हिन्दी</a> | 
+    <a href="#-日本語">日本語</a> | 
+    <a href="#-한국어">한국어</a>
   </p>
 
   [![Website](https://img.shields.io/badge/Website-boltutil.com-blue)](https://boltutil.com)
@@ -14,62 +24,66 @@
 
 ---
 
+
+
 <a name="-简体中文"></a>
 ## 🇨🇳 简体中文
-
-### 💡 BoltUtil 是什么？
-
-**BoltUtil** 是一款专为开发者设计的**非托管加密货币（USDT）收款工具**。
-
-你可以把它理解为一个**“智能的链上会计”**。
-传统的支付平台（如 PayPal 或交易所支付）会先收钱进平台账户，再结算给你，这意味着你的资金有被冻结或平台跑路的风险。
-
-而 BoltUtil **完全不同** —— 我们只负责监控区块链数据。当用户付款时，资金**直接进入你的个人钱包**。我们监控到链上到账后，立即通知你的服务器发货。
-
-### 🌟 核心优势
-
-* ✅ **0 手续费**：你的钱就是你的，我们不从交易金额中抽成。
-* ✅ **资金直达 (非托管)**：配置你的 TRC20/ERC20 钱包地址，资金点对点直达，**绝无中间商赚差价，也无跑路风险**。
-* ✅ **无需 KYC**：不需要繁琐的实名认证或上传公司资质，保护隐私，初始化完毕即可面向全球收款。
-* ✅ **自带收银台**：无需前端开发！调用 API 即可获得一个专业的收银页面（完美适配手机/电脑），大幅降低开发成本。
-* ✅ **去中心化**：基于区块链真实数据，自动过滤假充值攻击。
-
-### 🚀 它是如何工作的？
-
-1.  **发起订单**：你的系统通过 API 告诉我们“要收多少钱”。
-2.  **用户付款**：用户在 BoltUtil 提供的标准收银台上扫描二维码，向**你的钱包**转账。
-3.  **自动识别**：BoltUtil 的节点集群毫秒级识别链上交易。
-4.  **回调通知**：确认到账后，我们立即发送 Webhook 通知你的服务器完成订单。
-
----
+**非托管加密货币（USDT）收款工具。** 资金点对点直达您的钱包，0 手续费，无需 KYC。监控链上到账后立即发送 Webhook 通知。
 
 <a name="-english"></a>
 ## 🇺🇸 English
+**Non-custodial USDT payment tool.** Funds go directly to your wallet with 0% fees and no KYC. We monitor the blockchain and send instant Webhook notifications upon detection.
 
-### 💡 What is BoltUtil?
+<a name="-español"></a>
+## 🇪🇸 Español
+**Pasarela de pago USDT no custodiada.** Los fondos van directamente a tu billetera con 0% de comisiones y sin KYC. Monitoreamos la cadena de bloques y enviamos notificaciones Webhook al instante.
 
-**BoltUtil** is a **non-custodial USDT payment tool** designed specifically for developers.
+<a name="-français"></a>
+## 🇫🇷 Français
+**Passerelle de paiement USDT non-hébergée.** Les fonds vont directement dans votre portefeuille avec 0 % de frais et sans KYC. Nous surveillons la blockchain et envoyons des notifications Webhook instantanées.
 
-Think of it as a **"Smart On-Chain Accountant."** Traditional payment gateways hold your funds before settling them to you, which exposes you to platform risks.
+<a name="-português"></a>
+## 🇧🇷 Português
+**Gateway de pagamento USDT não-custodial.** Os fundos vão direto para sua carteira com 0% de taxas e sem KYC. Monitoramos a blockchain e enviamos notificações Webhook instantâneas.
 
-**BoltUtil is different.** We only monitor the blockchain. When a user pays, the funds go **directly to your personal wallet**. Once we detect the transaction, we instantly notify your server to fulfill the order.
+<a name="-türkçe"></a>
+## 🇹🇷 Türkçe
+**Gözetimsiz (non-custodial) USDT ödeme aracı.** Fonlar, %0 komisyon ve KYC olmadan doğrudan cüzdanınıza gider. Blok zincirini izler ve anında Webhook bildirimleri göndeririz.
 
-### 🌟 Key Features
+<a name="-tiếng-việt"></a>
+## 🇻🇳 Tiếng Việt
+**Cổng thanh toán USDT phi lưu ký.** Tiền chuyển trực tiếp vào ví của bạn với phí 0% và không cần KYC. Chúng tôi theo dõi blockchain và gửi thông báo Webhook ngay lập tức.
 
-* ✅ **0% Fees**: We do not take a cut from your transaction volume.
-* ✅ **Direct Settlement (Non-Custodial)**: Funds go straight to your wallet. We never touch your assets. **Zero platform risk.**
-* ✅ **No KYC**: No complex identity verification required. Privacy-first and global ready immediately after initialization.
-* ✅ **Ready-to-Use Checkout**: No frontend coding needed! Get a professional payment page instantly via API that works on mobile and desktop.
-* ✅ **Decentralized**: Secure verification based on on-chain data to prevent fake deposit attacks.
+<a name="-pусский"></a>
+## 🇷🇺 Русский
+**Некастодиальный платежный шлюз USDT.** Средства поступают прямо на ваш кошелек с комиссией 0% и без KYC. Мы мониторим блокчейн и мгновенно отправляем Webhook-уведомления.
 
-### 🚀 How It Works
+<a name="-بالعربية"></a>
+## 🇸🇦 العربية
+**بوابة دفع USDT غير احتجازية.** تصل الأموال مباشرة إلى محفظتك برسوم 0% وبدون الحاجة لتوثيق الهوية (KYC). نقوم بمراقبة البلوكشين وإرسال إشعارات Webhook فورية.
 
-1.  **Create Order**: Your system calls the API to generate a payment order.
-2.  **User Pays**: The user scans the QR code on the standard checkout page and pays directly to **your wallet**.
-3.  **Auto-Detect**: BoltUtil monitors the blockchain network in real-time.
-4.  **Webhook**: Once confirmed, we send a notification to your server to complete the trade.
+<a name="-हिन्दी"></a>
+## 🇮🇳 हिन्दी
+**गैर-कस्टोडियल USDT भुगतान टूल।** फंड सीधे आपके वॉलेट में 0% फीस और बिना किसी KYC के जाता है। हम ब्लॉकचेन की निगरानी करते हैं और तुरंत Webhook नोटिफिकेशन भेजते हैं।
+
+<a name="-日本語"></a>
+## 🇯🇵 日本語
+**非管財型（ノンカストディアル）USDT決済ツール。** 資金は手数料0％、KYC不要で直接お客様のウォレットに届きます。ブロックチェーンを監視し、着金を検知すると即座にWebhook通知を送信します。
+
+<a name="-한국어"></a>
+## 🇰🇷 한국어
+**비수탁형(Non-custodial) USDT 결제 도구.** 수수료 0%, KYC 없이 자금이 귀하의 지갑으로 직접 전송됩니다. 블록체인을 모니터링하여 입금 감지 시 즉시 Webhook 알림을 보냅니다.
 
 ---
+
+## 🚀 How It Works / 工作原理
+
+1. **Create Order**: Your system calls the API to generate a payment order.
+2. **User Pays**: User scans QR code and pays directly to **your wallet**.
+3. **Auto-Detect**: BoltUtil nodes scan the blockchain in real-time.
+4. **Webhook**: Instant notification is sent to your server to complete the trade.
+
+
 
 ## 🌐 Contact & Support
 - **Official Website**: [boltutil.com](https://boltutil.com)
