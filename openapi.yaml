@@ -1,0 +1,171 @@
+openapi: 3.1.0
+info:
+  title: BoltUtil Merchant API
+  version: 1.0.0
+  description: >-
+    Public contract for creating and querying BoltUtil USDT payment orders.
+    Merchant requests must include an API key, millisecond timestamp, and
+    HMAC-SHA256 signature of timestamp + "." + the exact raw request body.
+servers:
+  - url: https://api.boltutil.com
+paths:
+  /api/v1/order/create:
+    post:
+      summary: Create a USDT payment order
+      operationId: createOrder
+      parameters:
+        - $ref: '#/components/parameters/BoltKey'
+        - $ref: '#/components/parameters/BoltTimestamp'
+        - $ref: '#/components/parameters/BoltSignature'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderCreateRequest'
+      responses:
+        '200':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderCreateResult'
+        '400':
+          $ref: '#/components/responses/ApiError'
+        '401':
+          $ref: '#/components/responses/ApiError'
+  /api/v1/order/status:
+    post:
+      summary: Query an order by merchant order ID
+      operationId: getOrderStatus
+      parameters:
+        - $ref: '#/components/parameters/BoltKey'
+        - $ref: '#/components/parameters/BoltTimestamp'
+        - $ref: '#/components/parameters/BoltSignature'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [externalOrderId]
+              properties:
+                externalOrderId:
+                  type: string
+                  minLength: 6
+                  maxLength: 64
+                  pattern: '^[a-zA-Z0-9_-]+$'
+      responses:
+        '200':
+          description: Current order state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderStatusResult'
+        '400':
+          $ref: '#/components/responses/ApiError'
+        '401':
+          $ref: '#/components/responses/ApiError'
+components:
+  parameters:
+    BoltKey:
+      name: X-Bolt-Key
+      in: header
+      required: true
+      schema: { type: string }
+    BoltTimestamp:
+      name: X-Bolt-Timestamp
+      in: header
+      required: true
+      description: Current Unix time in milliseconds. Requests older than five minutes are rejected.
+      schema: { type: string, pattern: '^\d{13}$' }
+    BoltSignature:
+      name: X-Bolt-Signature
+      in: header
+      required: true
+      description: Lowercase hexadecimal HMAC-SHA256 signature of timestamp + "." + exact raw JSON body.
+      schema: { type: string }
+  schemas:
+    OrderCreateRequest:
+      type: object
+      required: [amount, externalOrderId, network, currency]
+      properties:
+        amount: { type: number, minimum: 1, multipleOf: 0.000001 }
+        externalOrderId: { type: string, minLength: 6, maxLength: 64, pattern: '^[a-zA-Z0-9_-]+$' }
+        network: { type: string, enum: [TRC20, ERC20, BEP20, POLYGON, SOLANA] }
+        currency: { type: string, enum: [USDT] }
+        orderDesc: { type: string, maxLength: 255 }
+        notifyUrl: { type: string, format: uri, maxLength: 255, pattern: '^https://.*' }
+        returnUrl: { type: string, format: uri, maxLength: 255 }
+        expiredMinutes: { type: integer, minimum: 15, maximum: 60, default: 30 }
+        metadata: { type: object, maxProperties: 10, additionalProperties: true }
+    OrderCreateResult:
+      allOf:
+        - $ref: '#/components/schemas/Result'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                orderToken: { type: string }
+                merchantExternalId: { type: string }
+                status: { type: string }
+                checkoutUrl: { type: string, format: uri }
+                returnUrl: { type: string, format: uri }
+                payment:
+                  type: object
+                  properties:
+                    address: { type: string }
+                    amount: { type: string }
+                    rawAmount: { type: string }
+                    currency: { type: string }
+                    network: { type: string }
+                    qrData: { type: string }
+                    decimal: { type: integer }
+                time:
+                  type: object
+                  properties:
+                    expireTimestamp: { type: integer, format: int64 }
+                    serverTimestamp: { type: integer, format: int64 }
+                metadata: { type: object, additionalProperties: true }
+    OrderStatusResult:
+      allOf:
+        - $ref: '#/components/schemas/Result'
+        - type: object
+          properties:
+            data:
+              type: object
+              properties:
+                amount: { type: string }
+                paidAmount: { type: string }
+                shortfallAmount: { type: string }
+                settlementType: { type: string }
+                manuallyAccepted: { type: boolean }
+                currency: { type: string }
+                network: { type: string }
+                status: { type: string }
+                externalOrderId: { type: string }
+                destinationAddress: { type: string }
+                txHash: { type: string }
+                confirmations: { type: integer }
+                paidAt: { type: string }
+                confirmedAt: { type: string }
+                completedAt: { type: string }
+                metadata: { type: object, additionalProperties: true }
+    Result:
+      type: object
+      required: [code, message, timestamp]
+      properties:
+        code: { type: integer }
+        message: { type: string }
+        timestamp: { type: integer, format: int64 }
+    ErrorResult:
+      allOf:
+        - $ref: '#/components/schemas/Result'
+  responses:
+    ApiError:
+      description: Invalid request or authentication failure
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResult'
