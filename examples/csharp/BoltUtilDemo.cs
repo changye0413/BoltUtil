@@ -155,8 +155,9 @@ public static class BoltUtilDemo
             Console.WriteLine("  dotnet run -- create TRC20");
             Console.WriteLine("  dotnet run -- create ERC20");
             Console.WriteLine("  dotnet run -- create BEP20");
+            Console.WriteLine("  dotnet run -- create POLYGON");
+            Console.WriteLine("  dotnet run -- create SOLANA");
             Console.WriteLine("  dotnet run -- webhook");
         }
     }
 }
-
