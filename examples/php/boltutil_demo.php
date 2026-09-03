@@ -122,5 +122,7 @@ if ($command === 'create') {
     echo "  php boltutil_demo.php create TRC20\n";
     echo "  php boltutil_demo.php create ERC20\n";
     echo "  php boltutil_demo.php create BEP20\n";
+    echo "  php boltutil_demo.php create POLYGON\n";
+    echo "  php boltutil_demo.php create SOLANA\n";
     echo "  php -S 0.0.0.0:3000 boltutil_demo.php\n";
 }
