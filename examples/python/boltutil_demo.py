@@ -121,5 +121,6 @@ if __name__ == "__main__":
         print("  python3 boltutil_demo.py create TRC20")
         print("  python3 boltutil_demo.py create ERC20")
         print("  python3 boltutil_demo.py create BEP20")
+        print("  python3 boltutil_demo.py create POLYGON")
+        print("  python3 boltutil_demo.py create SOLANA")
         print("  python3 boltutil_demo.py webhook")
-
