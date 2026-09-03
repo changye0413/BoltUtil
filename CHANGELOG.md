@@ -2,7 +2,7 @@
 
 This changelog covers the documentation and merchant-side examples in this public repository. It is not a complete production-service deployment log.
 
-## Unreleased
+## v1.3.1 - 2026-09-03
 
 - Reworked the repository as the official BoltUtil integration hub.
 - Added separate English and Simplified Chinese entry pages.

@@ -6,7 +6,7 @@
 
 **BoltUtil 是面向网站、SaaS 和数字业务的非托管 USDT 支付 API 与托管收银台。** 商户后端创建订单，用户向商户配置的钱包支付精确金额，链上确认后 BoltUtil 向商户发送带签名的 Webhook。
 
-[开始使用](https://boltutil.com/zh/register?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) · [开发者文档](https://boltutil.com/zh/developer-docs?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) · [Node.js 示例](examples/node/boltutil-demo.js) · [集成问答](https://github.com/changye0413/BoltUtil/discussions)
+[开始使用](https://boltutil.com/zh/auth/register?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) · [开发者文档](https://boltutil.com/zh/developer-docs?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) · [Node.js 示例](examples/node/boltutil-demo.js) · [集成问答](https://github.com/changye0413/BoltUtil/discussions)
 
 ![BoltUtil 非托管 USDT 支付网关](assets/boltutil-home.png)
 
@@ -20,7 +20,7 @@ BoltUtil 不是交易所、托管钱包或资金归集账户，而是把链上�
 
 ## 快速接入
 
-1. [注册商户账户](https://boltutil.com/zh/register?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo)。
+1. [注册商户账户](https://boltutil.com/zh/auth/register?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo)。
 2. 添加收款钱包并创建 API Key。
 3. 配置 HTTPS Webhook 地址并保存签名密钥。
 4. 由商户后端调用 `/api/v1/order/create` 创建订单。

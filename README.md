@@ -9,10 +9,10 @@
 [![Website](https://img.shields.io/badge/Website-boltutil.com-111827?style=flat-square)](https://boltutil.com/?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo)
 [![API Docs](https://img.shields.io/badge/API-Developer_Docs-2563EB?style=flat-square)](https://boltutil.com/developer-docs?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo)
 [![Networks](https://img.shields.io/badge/USDT-5_networks-16A34A?style=flat-square)](https://boltutil.com/features?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo)
-[![Settlement](https://img.shields.io/badge/Settlement-Direct_to_wallet-111827?style=flat-square)](https://boltutil.com/guides/non-custodial-usdt-payments?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo)
+[![Settlement](https://img.shields.io/badge/Settlement-Direct_to_wallet-111827?style=flat-square)](https://boltutil.com/features?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo)
 [![Examples](https://github.com/changye0413/BoltUtil/actions/workflows/examples.yml/badge.svg)](https://github.com/changye0413/BoltUtil/actions/workflows/examples.yml)
 
-[Get started](https://boltutil.com/register?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) · [Read the API docs](https://boltutil.com/developer-docs?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) · [Run the Node.js example](examples/node/boltutil-demo.js) · [Ask an integration question](https://github.com/changye0413/BoltUtil/discussions)
+[Get started](https://boltutil.com/auth/register?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) · [Read the API docs](https://boltutil.com/developer-docs?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) · [Run the Node.js example](examples/node/boltutil-demo.js) · [Ask an integration question](https://github.com/changye0413/BoltUtil/discussions)
 
 ![BoltUtil non-custodial USDT payment gateway](assets/boltutil-home.png)
 
@@ -26,7 +26,7 @@ BoltUtil is not an exchange, wallet custodian, or pooled settlement account. It 
 
 ## Quick start
 
-1. [Create a merchant account](https://boltutil.com/register?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo).
+1. [Create a merchant account](https://boltutil.com/auth/register?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo).
 2. Add a settlement wallet and create an API key.
 3. Configure an HTTPS Webhook endpoint and copy its signing secret.
 4. Create a payment order from your backend.
