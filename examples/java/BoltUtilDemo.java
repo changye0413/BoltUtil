@@ -148,8 +148,9 @@ public class BoltUtilDemo {
             System.out.println("  javac BoltUtilDemo.java && java BoltUtilDemo create TRC20");
             System.out.println("  javac BoltUtilDemo.java && java BoltUtilDemo create ERC20");
             System.out.println("  javac BoltUtilDemo.java && java BoltUtilDemo create BEP20");
+            System.out.println("  javac BoltUtilDemo.java && java BoltUtilDemo create POLYGON");
+            System.out.println("  javac BoltUtilDemo.java && java BoltUtilDemo create SOLANA");
             System.out.println("  javac BoltUtilDemo.java && java BoltUtilDemo webhook");
         }
     }
 }
-
