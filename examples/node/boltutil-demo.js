@@ -117,6 +117,7 @@ if (command === "create") {
   console.log("  node boltutil-demo.js create TRC20");
   console.log("  node boltutil-demo.js create ERC20");
   console.log("  node boltutil-demo.js create BEP20");
+  console.log("  node boltutil-demo.js create POLYGON");
+  console.log("  node boltutil-demo.js create SOLANA");
   console.log("  node boltutil-demo.js webhook");
 }
-
