@@ -66,7 +66,11 @@ Use one of:
 TRC20
 ERC20
 BEP20
+POLYGON
+SOLANA
 ```
+
+Check the current [network documentation](https://boltutil.com/features?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) for token-contract requirements, confirmation policies, and availability before production use.
 
 ## Important Security Notes
 
@@ -142,6 +146,6 @@ dotnet run -- webhook
 
 1. Your backend creates an order with `POST /api/v1/order/create`.
 2. Show `checkoutUrl`, payment address, QR data, network, and exact amount to the customer.
-3. Customer transfers USDT on TRC20, ERC20, or BEP20.
+3. Customer transfers USDT on the network selected for the order.
 4. BoltUtil monitors the chain and sends a signed webhook after confirmation.
 5. Your backend verifies the webhook signature and marks the local order as paid.
