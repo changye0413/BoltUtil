@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "BoltUtil Merchant API",
+    "description": "Create and query BoltUtil USDT payment orders. Keep all secrets in a private Postman environment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "api_base", "value": "https://api.boltutil.com" },
+    { "key": "api_key", "value": "YOUR_API_KEY" },
+    { "key": "webhook_secret", "value": "YOUR_WEBHOOK_SECRET" },
+    { "key": "network", "value": "TRC20" },
+    { "key": "external_order_id", "value": "ORDER-10001" },
+    { "key": "notify_url", "value": "https://merchant.example.com/webhooks/boltutil" },
+    { "key": "return_url", "value": "https://merchant.example.com/orders/10001" }
+  ],
+  "item": [
+    {
+      "name": "Create order",
+      "event": [{
+        "listen": "prerequest",
+        "script": {
+          "type": "text/javascript",
+          "exec": [
+            "const CryptoJS = require('crypto-js');",
+            "const timestamp = Date.now().toString();",
+            "pm.collectionVariables.set('bolt_timestamp', timestamp);",
+            "const rawBody = pm.variables.replaceIn(pm.request.body.raw);",
+            "const signature = CryptoJS.HmacSHA256(`${timestamp}.${rawBody}`, pm.variables.get('webhook_secret')).toString(CryptoJS.enc.Hex);",
+            "pm.collectionVariables.set('bolt_signature', signature);"
+          ]
+        }
+      }],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Bolt-Key", "value": "{{api_key}}" },
+          { "key": "X-Bolt-Timestamp", "value": "{{bolt_timestamp}}" },
+          { "key": "X-Bolt-Signature", "value": "{{bolt_signature}}" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"externalOrderId\": \"{{external_order_id}}\",\n  \"amount\": \"49.90\",\n  \"currency\": \"USDT\",\n  \"network\": \"{{network}}\",\n  \"notifyUrl\": \"{{notify_url}}\",\n  \"returnUrl\": \"{{return_url}}\"\n}"
+        },
+        "url": "{{api_base}}/api/v1/order/create"
+      }
+    },
+    {
+      "name": "Get order status",
+      "event": [{
+        "listen": "prerequest",
+        "script": {
+          "type": "text/javascript",
+          "exec": [
+            "const CryptoJS = require('crypto-js');",
+            "const timestamp = Date.now().toString();",
+            "pm.collectionVariables.set('bolt_timestamp', timestamp);",
+            "const rawBody = pm.variables.replaceIn(pm.request.body.raw);",
+            "const signature = CryptoJS.HmacSHA256(`${timestamp}.${rawBody}`, pm.variables.get('webhook_secret')).toString(CryptoJS.enc.Hex);",
+            "pm.collectionVariables.set('bolt_signature', signature);"
+          ]
+        }
+      }],
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Bolt-Key", "value": "{{api_key}}" },
+          { "key": "X-Bolt-Timestamp", "value": "{{bolt_timestamp}}" },
+          { "key": "X-Bolt-Signature", "value": "{{bolt_signature}}" }
+        ],
+        "body": { "mode": "raw", "raw": "{\n  \"externalOrderId\": \"{{external_order_id}}\"\n}" },
+        "url": "{{api_base}}/api/v1/order/status"
+      }
+    }
+  ]
+}
