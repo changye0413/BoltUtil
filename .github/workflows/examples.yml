@@ -1,0 +1,53 @@
+name: Validate public examples
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check Node.js example
+        run: node --check examples/node/boltutil-demo.js
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check Python example
+        run: python -m py_compile examples/python/boltutil_demo.py
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+      - name: Check Go formatting
+        run: test -z "$(gofmt -d examples/go/boltutil_demo.go)"
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Compile Java example
+        run: javac -d /tmp/boltutil-java-build examples/java/BoltUtilDemo.java
+
+      - name: Check PHP example
+        run: php -l examples/php/boltutil_demo.php
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build C# example
+        run: dotnet build examples/csharp/BoltUtilDemo.csproj --nologo
+
+      - name: Validate Postman collection JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('postman/BoltUtil.postman_collection.json', 'utf8'))"
