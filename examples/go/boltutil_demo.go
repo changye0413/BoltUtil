@@ -180,7 +180,8 @@ func main() {
 		fmt.Println("  go run boltutil_demo.go create TRC20")
 		fmt.Println("  go run boltutil_demo.go create ERC20")
 		fmt.Println("  go run boltutil_demo.go create BEP20")
+		fmt.Println("  go run boltutil_demo.go create POLYGON")
+		fmt.Println("  go run boltutil_demo.go create SOLANA")
 		fmt.Println("  go run boltutil_demo.go webhook")
 	}
 }
-
