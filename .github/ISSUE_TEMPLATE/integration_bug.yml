@@ -1,0 +1,61 @@
+name: Reproducible integration bug
+description: Report a problem in a public BoltUtil merchant-side example.
+title: "[Integration]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: For account-specific or security-sensitive problems, use the private support links instead of this public form.
+  - type: dropdown
+    id: language
+    attributes:
+      label: Example language
+      options:
+        - Node.js
+        - Python
+        - PHP
+        - Go
+        - Java
+        - C#
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: network
+    attributes:
+      label: Network
+      options:
+        - TRC20
+        - ERC20
+        - BEP20
+        - POLYGON
+        - SOLANA
+        - Not network-specific
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide a minimal reproduction using placeholder values.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime version
+      placeholder: Node.js 20.18.0
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, full private payloads, and customer information.
+          required: true

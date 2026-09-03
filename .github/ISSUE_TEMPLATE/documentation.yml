@@ -1,0 +1,36 @@
+name: Documentation problem
+description: Report an inaccurate, unclear, or broken public integration instruction.
+title: "[Docs]: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: Do not include API keys, Webhook secrets, private customer data, or other sensitive information.
+  - type: input
+    id: location
+    attributes:
+      label: Documentation location
+      description: Link to the affected page, section, or example file.
+      placeholder: https://boltutil.com/docs/...
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Explain what is inaccurate, unclear, or broken.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+      description: Describe the expected behavior or wording and provide evidence when possible.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, private data, and sensitive production details.
+          required: true

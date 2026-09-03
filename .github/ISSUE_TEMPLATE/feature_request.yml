@@ -1,0 +1,25 @@
+name: Integration feature request
+description: Suggest a public example, guide, or developer-experience improvement.
+title: "[Request]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Integration problem
+      description: What merchant or developer problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed improvement
+      description: Describe the example, guide, language, or workflow you would like to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Current workaround
+      description: Explain how you handle this today, if applicable.

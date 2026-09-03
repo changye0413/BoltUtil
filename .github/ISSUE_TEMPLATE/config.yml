@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Integration questions
+    url: https://github.com/changye0413/BoltUtil/discussions
+    about: Ask implementation questions and share integration patterns.
+  - name: Account-specific support
+    url: https://github.com/changye0413/BoltUtil/blob/main/SUPPORT.md
+    about: Review private support options for account or merchant-specific assistance.
+  - name: Security report
+    url: https://github.com/changye0413/BoltUtil/blob/main/SECURITY.md
+    about: Follow the private reporting instructions; never disclose a vulnerability in a public issue.
