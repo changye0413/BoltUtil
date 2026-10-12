@@ -4,7 +4,7 @@ This folder contains minimal merchant-side examples for integrating BoltUtil.
 
 Each language demo includes:
 
-- Create a USDT payment order.
+- Create a USDT payment order by default; adapt currency/network for authorized USDC routes.
 - Sign merchant API requests with HMAC-SHA256.
 - Receive BoltUtil payment webhooks.
 - Verify webhook signatures before fulfilling an order.
@@ -68,9 +68,16 @@ ERC20
 BEP20
 POLYGON
 SOLANA
+BASE
 ```
 
 Check the current [network documentation](https://boltutil.com/features?utm_source=github&utm_medium=referral&utm_campaign=boltutil_repo) for token-contract requirements, confirmation policies, and availability before production use.
+
+## USDC and Base in v2.1
+
+The six language demos keep `currency: "USDT"` as their default. For Base USDC, change the request currency to `USDC` and choose `BASE`; sign the final raw JSON body. Use only routes authorized for the merchant, and always display the returned `payment.amount`. TRON does not offer USDC. The [network/asset table](../README.md#supported-stablecoins-and-networks) distinguishes native, pegged and bridged tokens.
+
+These demos are minimal: add robust input/error handling, order-state validation, duplicate-event protection and idempotent fulfillment in your production application. Verifying a signature alone is not the complete payment-acceptance decision.
 
 ## Important Security Notes
 
@@ -146,6 +153,6 @@ dotnet run -- webhook
 
 1. Your backend creates an order with `POST /api/v1/order/create`.
 2. Show `checkoutUrl`, payment address, QR data, network, and exact amount to the customer.
-3. Customer transfers USDT on the network selected for the order.
+3. Customer sends the exact USDT/USDC amount on the network selected for the order, using wallet confirmation or manual transfer.
 4. BoltUtil monitors the chain and sends a signed webhook after confirmation.
 5. Your backend verifies the webhook signature and marks the local order as paid.
