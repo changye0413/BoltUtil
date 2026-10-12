@@ -1,9 +1,9 @@
 openapi: 3.1.0
 info:
   title: BoltUtil Merchant API
-  version: 1.0.0
+  version: 2.1.0
   description: >-
-    Public contract for creating and querying BoltUtil USDT payment orders.
+    Public contract for creating and querying BoltUtil USDT and USDC payment orders.
     Merchant requests must include an API key, millisecond timestamp, and
     HMAC-SHA256 signature of timestamp + "." + the exact raw request body.
 servers:
@@ -11,7 +11,7 @@ servers:
 paths:
   /api/v1/order/create:
     post:
-      summary: Create a USDT payment order
+      summary: Create a stablecoin payment order
       operationId: createOrder
       parameters:
         - $ref: '#/components/parameters/BoltKey'
@@ -87,13 +87,26 @@ components:
       schema: { type: string }
   schemas:
     OrderCreateRequest:
+      description: >-
+        Routes require service activation and an active merchant receiving wallet.
+        TRON supports USDT only. Base USDT is the configured bridged variant;
+        BNB USDC is Binance-Peg USDC; other supported USDC routes use native USDC.
+        Use the exact payment.amount returned by the service, without rounding.
+      allOf:
+        - if:
+            properties:
+              network: { const: TRC20 }
+            required: [network]
+          then:
+            properties:
+              currency: { const: USDT }
       type: object
       required: [amount, externalOrderId, network, currency]
       properties:
         amount: { type: number, minimum: 1, multipleOf: 0.000001 }
         externalOrderId: { type: string, minLength: 6, maxLength: 64, pattern: '^[a-zA-Z0-9_-]+$' }
-        network: { type: string, enum: [TRC20, ERC20, BEP20, POLYGON, SOLANA] }
-        currency: { type: string, enum: [USDT] }
+        network: { type: string, enum: [TRC20, ERC20, BEP20, POLYGON, SOLANA, BASE] }
+        currency: { type: string, enum: [USDT, USDC] }
         orderDesc: { type: string, maxLength: 255 }
         notifyUrl: { type: string, format: uri, maxLength: 255, pattern: '^https://.*' }
         returnUrl: { type: string, format: uri, maxLength: 255 }
