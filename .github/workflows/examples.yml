@@ -14,40 +14,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - name: Check Node.js example
-        run: node --check examples/node/boltutil-demo.js
-
+          node-version: '24'
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check Python example
-        run: python -m py_compile examples/python/boltutil_demo.py
-
       - uses: actions/setup-go@v5
         with:
-          go-version: '1.23'
-      - name: Check Go formatting
-        run: test -z "$(gofmt -d examples/go/boltutil_demo.go)"
-
+          go-version: '1.26.x'
+          cache: false
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-      - name: Compile Java example
-        run: javac -d /tmp/boltutil-java-build examples/java/BoltUtilDemo.java
-
-      - name: Check PHP example
-        run: php -l examples/php/boltutil_demo.php
-
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-      - name: Build C# example
-        run: dotnet build examples/csharp/BoltUtilDemo.csproj --nologo
-
-      - name: Validate Postman collection JSON
-        run: node -e "JSON.parse(require('fs').readFileSync('postman/BoltUtil.postman_collection.json', 'utf8'))"
+      - name: Syntax, format and public JSON checks
+        run: |
+          node --check examples/node/boltutil-demo.js
+          python -m py_compile examples/python/boltutil_demo.py examples/tests/contract_test.py
+          test -z "$(gofmt -d examples/go/boltutil_demo.go)"
+          php -l examples/php/boltutil_demo.php
+          node -e "JSON.parse(require('fs').readFileSync('postman/BoltUtil.postman_collection.json', 'utf8'))"
+      - name: Six-language merchant API and webhook contract tests
+        # Uses only loopback HTTP, synthetic credentials and synthetic events.
+        # Java/Maven, Go and C# are built by the harness. No live orders/emails.
+        run: python examples/tests/contract_test.py --languages node python go java csharp php
